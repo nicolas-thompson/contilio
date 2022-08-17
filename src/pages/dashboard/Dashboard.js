@@ -4,6 +4,12 @@ import Layout from '../../components/layout/Layout';
 
 class Dashboard extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+    };
+  }
 
   getData = () => {
     fetch('data.json'
@@ -15,13 +21,16 @@ class Dashboard extends React.Component {
       }
     )
       .then(function (response) {
-        console.log(response)
         return response.json();
       })
       .then(function (myJson) {
         console.log(myJson);
-      });
-  }
+
+        this.setState({
+          data: myJson
+        })
+      }.bind(this));
+  };
 
   componentDidMount() {
     console.log('Dashboard mounted');
@@ -32,6 +41,9 @@ class Dashboard extends React.Component {
     return (
       <Layout>
         <h1>Dashboard</h1>
+        {
+          this.state.data && this.state.data.length > 0 && this.state.data.map((item) => <p>{item.title}</p>)
+        }
       </Layout>
     );
   }
