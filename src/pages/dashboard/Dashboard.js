@@ -4,6 +4,7 @@ import { Grid, Typography } from '@mui/material';
 import Layout from '../../components/layout/Layout';
 import ItemTitle from '../../components/item-title/ItemTitle';
 import ItemAttributes from '../../components/item-attributes/ItemAttributes';
+import ItemChart from '../../components/item-chart/ItemChart';
 
 import CSS from './Dashboard.module.css';
 
@@ -59,11 +60,11 @@ class Dashboard extends React.Component {
           <Grid item xs={12}>
             {this.state.currentItem && <ItemTitle title={this.state.currentItem.title} />}
           </Grid>
-          <Grid item xs={6} className={CSS["side-bar"]}>
+          <Grid item xs={6}>
             {this.state.currentItem && <ItemAttributes attributes={this.state.currentItem.attributes} />}
           </Grid>
           <Grid item xs={6}>
-            Item Chart
+            {this.state.currentItem && <ItemChart attributes={this.state.currentItem.attributes} />}
           </Grid>
         </Grid>
 
