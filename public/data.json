@@ -4,21 +4,25 @@
       "title":"Lorem ipsum",
       "attributes":[
          {
+            "id":"1",
             "name":"length",
             "value":10,
             "unit":"m"
          },
          {
+            "id":"2",
             "name":"width",
             "value":7,
             "unit":"m"
          },
          {
+            "id":"3",
             "name":"height",
             "value":3,
             "unit":"m"
          },
          {
+            "id":"4",
             "name":"weight",
             "value":4,
             "unit":"kg"

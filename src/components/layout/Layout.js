@@ -1,18 +1,9 @@
-import { Container, Grid } from '@mui/material';
+import { Container } from '@mui/material';
 
-import CSS from './Layout.module.css';
-
-const Layout = ({ children }) => {
+const Layout = ({ children, attributes }) => {
   return (
     <Container maxWidth={false}>
-      <Grid container>
-        <Grid item xs={2} className={CSS["side-bar"]}>
-          item attributes
-        </Grid>
-        <Grid item xs={10}>
-          {children}
-        </Grid>
-      </Grid>
+      {children}
     </Container>
   );
 }
