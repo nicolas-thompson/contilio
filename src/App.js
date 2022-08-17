@@ -1,11 +1,19 @@
+import React from 'react';
 
+import { Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      Contilio
-    </div>
-  );
+import Login from "./pages/login/Login";
+
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Switch>
+          <Route exact path="/" component={Login} />
+        </Switch>
+      </>
+    );
+  }
 }
 
 export default App;
