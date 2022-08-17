@@ -1,6 +1,10 @@
 import React from 'react';
+import { Typography } from '@mui/material';
 
 import Layout from '../../components/layout/Layout';
+import ItemTitle from '../../components/item-title/ItemTitle';
+
+import CSS from './Dashboard.module.css';
 
 class Dashboard extends React.Component {
 
@@ -8,14 +12,14 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       items: [],
-      getCurrentItem: null,
+      currentItem: null,
     };
   }
 
   getCurrentItem = ({ id }) => {
     const { items } = this.state;
     const currentItem = items.filter(item => item.id === id);
-    console.log("currentItem: ", currentItem)
+    return currentItem;
   }
 
   getItems = () => {
@@ -34,8 +38,9 @@ class Dashboard extends React.Component {
         })
       })
       .then(() => {
+        const currentItem = this.getCurrentItem({ id: '1' });
         this.setState({
-          currentItem: this.getCurrentItem({ id: '1' })
+          currentItem: currentItem[0]
         })
       }
       );
@@ -48,8 +53,9 @@ class Dashboard extends React.Component {
   render() {
     return (
       <Layout>
-        <h1>Dashboard</h1>
-      </Layout>
+        <Typography className={CSS["page-title"]} variant="h1" gutterBottom component="div">Dashboard</Typography>
+        {this.state.currentItem && <ItemTitle title={this.state.currentItem.title} />}
+      </Layout >
     );
   }
 }

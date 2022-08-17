@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <Container maxWidth={false}>
       <Grid container>
         <Grid item xs={2} className={CSS["side-bar"]}>
-          Items
+          item attributes
         </Grid>
         <Grid item xs={10}>
           {children}
