@@ -28,19 +28,15 @@ class LoginForm extends React.Component {
   render() {
 
     const handlePasswordChange = (event) => {
-      console.log(event.target.value);
       this.setState({ email: event.target.value });
     }
 
     const handleEmailChange = (event) => {
-      console.log(event.target.value);
       this.setState({ password: event.target.value });
     }
 
     const handleSubmit = (event) => {
       event.preventDefault();
-
-      console.log(this.state);
       if (this.state.email && this.state.password) {
         this.setState({
           redirect: true

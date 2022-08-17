@@ -1,5 +1,6 @@
 [
    {
+      "id":"1",
       "title":"Lorem ipsum",
       "attributes":[
          {
@@ -25,6 +26,7 @@
       ]
    },
    {
+      "id":"2",
       "title":"Vivamus sed",
       "attributes":[
          {
@@ -50,6 +52,7 @@
       ]
    },
    {
+      "id":"3",
       "title":"Ut tempor",
       "attributes":[
          {

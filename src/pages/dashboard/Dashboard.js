@@ -7,11 +7,18 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      items: [],
+      getCurrentItem: null,
     };
   }
 
-  getData = () => {
+  getCurrentItem = ({ id }) => {
+    const { items } = this.state;
+    const currentItem = items.filter(item => item.id === id);
+    console.log("currentItem: ", currentItem)
+  }
+
+  getItems = () => {
     fetch('data.json'
       , {
         headers: {
@@ -20,30 +27,28 @@ class Dashboard extends React.Component {
         }
       }
     )
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (myJson) {
-        console.log(myJson);
-
+      .then((response) => response.json())
+      .then((json) => {
         this.setState({
-          data: myJson
+          items: json
         })
-      }.bind(this));
+      })
+      .then(() => {
+        this.setState({
+          currentItem: this.getCurrentItem({ id: '1' })
+        })
+      }
+      );
   };
 
   componentDidMount() {
-    console.log('Dashboard mounted');
-    this.getData();
+    this.getItems();
   }
 
   render() {
     return (
       <Layout>
         <h1>Dashboard</h1>
-        {
-          this.state.data && this.state.data.length > 0 && this.state.data.map((item) => <p>{item.title}</p>)
-        }
       </Layout>
     );
   }
