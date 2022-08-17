@@ -1,4 +1,6 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+
 
 import { Box, Stack, Button, TextField } from '@mui/material';
 
@@ -8,7 +10,19 @@ class LoginForm extends React.Component {
     this.state = {
       email: false,
       password: false,
+      redirect: false,
     };
+  }
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/dashboard' />
+    }
   }
 
   render() {
@@ -27,7 +41,11 @@ class LoginForm extends React.Component {
       event.preventDefault();
 
       console.log(this.state);
-
+      if (this.state.email && this.state.password) {
+        this.setState({
+          redirect: true
+        })
+      }
     }
 
     return (
@@ -49,6 +67,7 @@ class LoginForm extends React.Component {
             margin: '0px',
             padding: '0px',
           }}>Login</Button>
+          {this.renderRedirect()}
         </Stack>
       </Box>
     );
