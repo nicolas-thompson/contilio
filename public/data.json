@@ -31,24 +31,58 @@
    },
    {
       "id":"2",
-      "title":"Vivamus sed",
+      "title":"Donec convallis",
       "attributes":[
          {
+            "id":"1",
             "name":"length",
-            "value":7,
+            "value":4,
             "unit":"m"
          },
          {
+            "id":"2",
             "name":"width",
-            "value":10,
+            "value":3,
             "unit":"m"
          },
          {
+            "id":"3",
             "name":"height",
             "value":2,
             "unit":"m"
          },
          {
+            "id":"4",
+            "name":"weight",
+            "value":1,
+            "unit":"kg"
+         }
+      ]
+   },
+   {
+      "id":"3",
+      "title":"Vivamus sed",
+      "attributes":[
+         {
+            "id":"1",
+            "name":"length",
+            "value":7,
+            "unit":"m"
+         },
+         {
+            "id":"2",
+            "name":"width",
+            "value":10,
+            "unit":"m"
+         },
+         {  
+            "id":"3",
+            "name":"height",
+            "value":2,
+            "unit":"m"
+         },
+         {
+            "id":"4",
             "name":"weight",
             "value":8,
             "unit":"kg"
@@ -56,25 +90,29 @@
       ]
    },
    {
-      "id":"3",
+      "id":"4",
       "title":"Ut tempor",
       "attributes":[
          {
+            "id":"1",
             "name":"length",
             "value":9,
             "unit":"m"
          },
          {
+            "id":"2",
             "name":"width",
             "value":9,
             "unit":"m"
          },
          {
+            "id":"3",
             "name":"height",
             "value":9,
             "unit":"m"
          },
          {
+            "id":"4",
             "name":"weight",
             "value":9,
             "unit":"kg"

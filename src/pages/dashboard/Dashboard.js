@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
         })
       })
       .then(() => {
-        const currentItem = this.getCurrentItem({ id: '1' });
+        const currentItem = this.getCurrentItem({ id: '4' });
         this.setState({
           currentItem: currentItem[0]
         })
