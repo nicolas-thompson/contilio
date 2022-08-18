@@ -5,6 +5,7 @@ import Layout from '../../components/layout/Layout';
 import ItemTitle from '../../components/item-title/ItemTitle';
 import ItemAttributes from '../../components/item-attributes/ItemAttributes';
 import ItemChart from '../../components/item-chart/ItemChart';
+import ItemsSlider from '../../components/items-slider/ItemsSlider';
 
 import CSS from './Dashboard.module.css';
 
@@ -15,6 +16,7 @@ class Dashboard extends React.Component {
     this.state = {
       items: [],
       currentItem: null,
+      currentItemId: '1',
     };
   }
 
@@ -40,7 +42,7 @@ class Dashboard extends React.Component {
         })
       })
       .then(() => {
-        const currentItem = this.getCurrentItem({ id: '4' });
+        const currentItem = this.getCurrentItem({ id: this.state.currentItemId });
         this.setState({
           currentItem: currentItem[0]
         })
@@ -50,6 +52,16 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.getItems();
+  }
+
+  changeCurrentItem = (id) => {
+    const currentItem = this.getCurrentItem({ id: id.toString() });
+    this.setState({
+      currentItem: currentItem[0]
+    })
+    this.setState({
+      currentItemId: id.toString()
+    });
   }
 
   render() {
@@ -67,8 +79,12 @@ class Dashboard extends React.Component {
             {this.state.currentItem && <ItemChart attributes={this.state.currentItem.attributes} />}
           </Grid>
         </Grid>
-
-      </Layout>
+        <Grid container>
+          <Grid item xs={12}>
+            {this.state.items && <ItemsSlider items={this.state.items} changeCurrentItem={this.changeCurrentItem} />}
+          </Grid>
+        </Grid>
+      </Layout >
     );
   }
 }
