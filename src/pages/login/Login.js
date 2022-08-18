@@ -4,6 +4,15 @@ import LoginForm from "../../components/login-form/LoginForm";
 
 import CSS from "./Login.module.css";
 
+/**
+ * Login page
+ * @returns {JSX.Element}
+ * @constructor
+ * @component
+ * return (
+ * <Login />
+ * )
+ */
 class Login extends React.Component {
   render() {
     return (

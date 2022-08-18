@@ -8,6 +8,15 @@ import {
 } from "recharts";
 
 
+/**
+ * Item chart
+ * @returns {JSX.Element}
+ * @constructor
+ * @component
+ * return (
+ * <ItemChart />
+ * )
+ */
 class ItemChart extends React.Component {
 
   render() {

@@ -4,6 +4,15 @@ import { Redirect } from 'react-router-dom';
 
 import { Box, Stack, Button, TextField } from '@mui/material';
 
+/**
+ * Login form
+ * @returns {JSX.Element}
+ * @constructor
+ * @component
+ * return (
+ * <LoginForm />
+ * )
+ */
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);

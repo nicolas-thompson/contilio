@@ -3,6 +3,15 @@ import Slider from '@mui/material/Slider';
 
 import CSS from './ItemsSlider.module.css';
 
+/**
+ * Items slider
+ * @returns {JSX.Element}
+ * @constructor
+ * @component
+ * return (
+ * <ItemsSlider />
+ * )
+ */
 class DiscreteSlider extends React.Component {
   constructor(props) {
     super(props);

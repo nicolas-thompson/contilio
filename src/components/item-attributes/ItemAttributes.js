@@ -1,6 +1,16 @@
 import React from "react";
 import { DataGrid } from '@mui/x-data-grid';
 
+/**
+ * Data grid
+ * @returns {JSX.Element}
+ * @constructor
+ * @component
+ * return (
+ * <DataGrid />
+ * )
+ * @see https://mui.com/components/data-grid/
+ */
 class ItemAttributes extends React.Component {
 
   render() {

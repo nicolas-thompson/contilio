@@ -9,6 +9,15 @@ import ItemsSlider from '../../components/items-slider/ItemsSlider';
 
 import CSS from './Dashboard.module.css';
 
+/**
+ * Dashboard page
+ * @returns {JSX.Element}
+ * @constructor
+ * @component
+ * return (
+ *  <Dashboard />
+ * )
+ */
 class Dashboard extends React.Component {
 
   constructor(props) {
@@ -20,12 +29,22 @@ class Dashboard extends React.Component {
     };
   }
 
+  /**
+   * Get current item
+   * @param {number} id
+   * @returns {object}
+   */
   getCurrentItem = ({ id }) => {
     const { items } = this.state;
     const currentItem = items.filter(item => item.id === id);
     return currentItem;
   }
 
+  /**
+   * Get items
+   * @returns {Promise<void>}
+   * @async
+   */
   getItems = () => {
     fetch('data.json'
       , {
@@ -54,6 +73,11 @@ class Dashboard extends React.Component {
     this.getItems();
   }
 
+  /**
+   * Change current item
+   * @param {number} id
+   * @returns {void}
+   */
   changeCurrentItem = (id) => {
     const currentItem = this.getCurrentItem({ id: id.toString() });
     this.setState({
